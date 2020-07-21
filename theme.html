@@ -19,16 +19,6 @@
     <meta name="color:bold and italic" content="#000000"/>
     <meta name="text:font awesome tag decoration" content="fas fa-hashtag"/>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139431899-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-139431899-2');
-</script>
-
     <!-- THIS MAKES PHOTOSETS WORK, DON'T FUCK WITH IT
              SOURCE: http://gukthemes.com/post/149193631486/tutorial-540pxresponsive-photosets -->
 
@@ -52,28 +42,36 @@
         });
     </script> <!-- / PHOTOSETS STUFF -->
 
-    <!-- FONT AWESOME IMPORT
-         FIND PRETTY ICONS FOR YOUR TAGS HERE https://fontawesome.com/icons?d=gallery -->
-         
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Sans+JP:wght@100;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME IMPORT -->
+    <script src="https://kit.fontawesome.com/087afde393.js" crossorigin="anonymous"></script>
 
-<script src="https://kit.fontawesome.com/087afde393.js" crossorigin="anonymous"></script>
+    <!-- FONT IMPORTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Sans+JP:wght@100;900&display=swap" rel="stylesheet">
 
     <!-- PLUG SCRIPTS IN HERE IF YOU NEED THEM -->
-
-<script src="https://kit.fontawesome.com/087afde393.js" crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 
     <title>{title}</title>
 
     <style>
-
-        /* ----------------------------------- DUMB TWEAKS ----------------------------------- */
-
+    
+    
+    /* PINNED POST STYLING */
+    
+    
+    .pinned::before{
+        content:url("https://64.media.tumblr.com/0d0be0424e789985886e361c7fb1deeb/c05a785f4b42d03c-12/s500x750/2491d24773e6c20dd25bbb9b66158466a509193a.png");
+        position:absolute;
+        top:-90px;
+        left:240px;
+    }
+    
+/* ----------------------------------- DUMB TWEAKS ----------------------------------- */
+        
         /* fix padding & margin issues; make smooth transitions */
         * {
             box-sizing: border-box;
-            transition: .2s;
         }
 
         /* make all text the same size (bc double plus small text is gross) */
@@ -88,15 +86,15 @@
         }
         
 
-        /* ----------------------------------- BASIC FORMATTING ----------------------------------- */
+/* ----------------------------------- BASIC FORMATTING ----------------------------------- */
 
         body {
             background: {color:body background};
             font: 1rem 'Lato', sans-serif;
-            line-height:1.8rem;
             color:{color:text};
             overflow-x: hidden;
             overflow-y:scroll;
+            line-height:1.8rem;
         }
 
         ::selection{
@@ -105,48 +103,46 @@
         }
 
         blockquote {
-        border-left: 1px solid {color:accent};
-        padding: 0 0 0 10px;
-        margin: 0 0 0 10px;
+            border-left: 1px solid #000;
+            padding: 0 0 0 10px;
+            margin: 0 0 0 10px;
         }
 
         i,
         em {
-        color: {color:bold and italic};
+            color: {color:bold and italic};
         }
 
         b,
         strong {
-        color: {color:bold and italic};
-        font-weight:700;
+            color: {color:bold and italic};
+            font-weight:700;
         }
-
+        
+        p {
+            
+        }
+        
+        h1, h2, h3{
+            color:{color:bold and italic};
+            text-align: left;
+            text-transform: lowercase;
+            font-weight:400;
+        }
+        
         h1{
-            text-align:left;
-            font-size:3rem;
-            font-weight:100;
-            color:{color:bold and italic};
-            font-family: 'Noto Sans JP', sans-serif;
-            text-transform: uppercase;
-            margin:0;
+            font-size: 4rem;
+            letter-spacing: -3px;
         }
-
+        
         h2{
-            text-align:left;
-            font-weight:100;
-            color:{color:bold and italic};
-            font-family: 'Noto Sans JP', sans-serif;
-            text-transform: uppercase;
-            margin:0;
+            font-size: 3rem;
+            letter-spacing: -2px;
         }
-
+        
         h3{
-            text-align:left;
-            font-weight:900;
-            color:{color:bold and italic};
-            font-family: 'Noto Sans JP', sans-serif;
-            text-transform: uppercase;
-            margin:0;
+            font-size: 2rem;
+            letter-spacing: -2px;
         }
 
         pre{
@@ -164,70 +160,8 @@
         a:hover{
             color:{color:accent dark};
         }
-    
-    /* SIDEBAR */
-    
-    h1.title-thin{
-        text-transform:none;
-        font-size:2.5rem;
-        border-bottom:1.2rem solid {color:accent};
-        line-height:1rem;
-    }
-    
-    h1.title {
-      font-family: 'Noto Sans JP', sans-serif;
-      text-transform: uppercase;
-      color: {color:bold and italic};
-      font-weight:900;
-      margin: 0;
-      font-size: 6rem;
-      line-height: 5rem;
-    }
-
-    h1.stroke {
-      color: rgba(0, 0, 0, 0);
-      -webkit-text-stroke: 2px {color:bold and italic};
-    }
-    
-    h1.fill {
-      color: {color:accent};
-      z-index: -1;
-      position: relative;
-    }
-    
-/* ------------------ SCROLLBAR ------------------ */
-    
-    .top {
-      position: fixed;
-      bottom: 4rem;
-      left: 5vw;
-    }
-    
-    .desc{
-        color:{color:bold and italic};
-    }
-    .top-sidebar {
-      background: {color:accent};
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 5vw;
-      height: 83vh;
-    }
-    
-    a.nav {
-      text-transform: uppercase;
-      padding-right: .8rem;
-      color:{color:bold and italic};
-    }
-    
-    .navnum {
-      z-index: -1;
-      color: {color:accent};
-      font-weight: 900;
-    }
         
-/* ------------------ SCROLLBAR ------------------ */
+/* ----------------------------------- SCROLLBAR ----------------------------------- */
 
         ::-webkit-scrollbar {
             width: 0;
@@ -244,19 +178,84 @@
             background-clip:padding-box;
             border:2px solid rgba(0, 0, 0, 0);
         }
+    
+/* ----------------------------------- SIDEBAR ----------------------------------- */
+    
+    /* ------------------ SIDEBAR CONTAINER SETUP ------------------ */
+    
         
-        /* ----------------------------------- CONTAINER SETUP ----------------------------------- */
+    /* ecto why are some of these tabbed four and some of these tabbed two?
+        fuck you that's why */
+        
+    .sidebar-color{
+      background:{color:accent};
+      position:fixed;
+      top:0;
+      left:0;
+      width:5vw;
+      height:90vh;
+    }
+    
+    .sidebar{
+      position:fixed;
+      bottom:1rem;
+      left:10vw;
+      width:470px;
+      color:{color:bold and italic};
+    }
+        
+    /* ------------------ FANCY HEADER SHIT ------------------ */
+        
+        
+    .sidebar h1 {
+        font-family: 'Noto Sans JP', sans-serif;
+        text-transform:uppercase;
+        color:{color:bold and italic};
+        margin:0 0 0 -.5rem;
+        font-size:5rem;
+        line-height:4.2rem;
+        font-weight:900;
+    }
+    
+    h1 span{
+      display:block;
+    }
+    
+    .stroke{
+      color:rgba(0,0,0,0);
+      -webkit-text-stroke: 2px {color:bold and italic};
+    }
+    
+    .fill{
+      color:{color:accent};
+      z-index:-1;
+      position:relative;
+    }
+        
+    /* ------------------ NAV LINK STYLING ------------------ */
+    
+    a.nav {
+      text-transform: uppercase;
+      padding-right: .8rem;
+      color:{color:bold and italic};
+    }
+    
+    .navnum {
+      z-index: -1;
+      color: {color:accent};
+      font-weight: 900;
+    }
+        
+/* ----------------------------------- POSTS ----------------------------------- */
+        
+        /* ------------------ CONTAINER SETUP ------------------ */
 
         #posts-wrapper{
-          position:fixed;
-          top:0;
-          right:2rem;
-          padding-top:8rem;
-          padding-bottom:8rem;
-          width:550px;
-          height:100vh;
-          overflow-y:scroll; 
-          background-color:rgba(255,255,255,.8);
+          height:auto;
+          position:absolute;
+          padding:1rem;
+          top:5rem;
+          right:5rem;
         }
         
         .entry{
@@ -278,63 +277,50 @@
               text-shadow:1px 1px 1px rgba(0,0,0,.2);
               text-transform:uppercase;
               padding:1rem;
-              line-height:1.3rem;
         }
         
-        /* ------------------ POST HEADER ------------------ */
-        
-        .posts-permalink .fas{
-            color:#fff;
-        }
-        
-        .posts-permalink a{
-            color:#fff;
-        }
-        
-        p.left{
-          float:left;
-          margin-top:1px;
-        }
-        
-        p.right{
-          float:right;
-          margin-top:.1rem;
-        }
-        
-        p.right a{
-            padding-left:1rem;
-        }
-
-
         /* ------------------ FOOTER ------------------ */
-        
+
         .footer{
-            margin-top:-.5rem;
+            padding:1rem 0;
+            margin-bottom:4rem;
+            color:{color:text};
+            text-transform:uppercase;
+        }
+
+        .footer a{
+            color:{color:text};
+            margin-right:.5rem;
+            line-height:1.8rem;
+        }
+
+        .footer a:hover,.footer a.footer-date:hover{
+            color:{color:accent dark};
+        }
+        
+        .footer a.footer-date{
+            color:{color:text};
+            font-weight:bold;
+            padding-bottom:.2rem;
+            border-bottom:.2rem solid {color:accent};
         }
         
         a.tags{
-            color:{color:bold and italic};
             text-transform:none;
-            line-height:1.6rem;
-            margin-right:1rem;
+            line-height:1.3rem;
         }
         
         a.tags::before{
             color:{color:accent};
-            font-weight:bold;
             content: "# ";
-        }
-        
-        a.tags:hover{
-            color:{color:accent};
         }
         
         /* ------------------ PAGINATION ------------------ */
         
         .pagination{
             width:100%;
-            margin:-4rem auto auto auto;
             letter-spacing:1rem;
+            padding-top:1rem;
         }
         
         .pagination a {
@@ -345,7 +331,7 @@
             color:{color:accent};
         }
 
-        /* ----------------------------------- POST STYLING ----------------------------------- */
+/* ----------------------------------- POST STYLING ----------------------------------- */
 
         /* ------------------ PHOTOS & PHOTOSETS ------------------ */
 
@@ -372,27 +358,26 @@
         /* I don't know if the wrapper is entirely necessary but I'm using it anyway */
         .quote-wrapper .fas{
             color:{color:accent};
-            font-size:1.8rem;
+            font-size:4rem;
             text-shadow:1px 2px 0 {color:bold and italic},2px 3px 0 {color:accent dark};
         }
-
+        
         .quote{
             text-align:left;
-            margin:-2.2rem 0 10px 2.4rem;
+            margin:-4.8rem 0 1rem 5.5rem;
         }
 
+
         .quote h1{
+            font: 1rem 'Lato', sans-serif;
             color:{color:bold and italic};
-            text-transform:none;
-            text-align:left;
-            margin:0 0 .5rem 0;
             text-shadow:none;
             font-size:1.2rem;
-            font-weight:400 !important;
-        }
-        
-        .quote p{
-            margin-top:0;
+            font-weight:300;
+            text-transform:none;
+            line-height:1.5rem;
+            margin-bottom:1rem;
+            letter-spacing:0;
         }
 
         /* ------------------ CHAT ------------------ */
@@ -434,43 +419,66 @@
             max-height:100%;
         }
 
-        /* ------------------ MOBILE ------------------ */
+/* ----------------------------------- MOBILE STYLING ----------------------------------- */
 
-        @media screen and (max-width:1140px){
+        @media screen and (max-width:1220px){
+            
+            .sidebar{
+                width:370px;
+                left:2rem;
+            }
+            
+            
+            .sidebar-color{
+                display:none;
+            }
+        }
+        
+         @media screen and (max-width:1035px){
+             
+             /* look  I know this doesn't quite work but idk how to fix it other
+                than gutting it and trying again (which I might do eventually) */
             
             #posts-wrapper{
-                margin-top:15rem;
-                padding-bottom:15rem;
+                left:3rem;
+                top:10rem;
+                background:{color:body background};
+                width:570px;
             }
             
-            .top {
-              padding:2rem;
-              top:0;
-              left:auto;
-              z-index:100;
-              height:220px;
-              display:inline-block;
-              text-align:left;
+            .sidebar-color{
+                display:none;
             }
-            .top h1{
-                display:inline-block;
+            
+            .sidebar{
+                top:0;
+                left:4rem;
+                width:540px;
             }
+            
+            .sidebar h1{
+                position: fixed;
+                height: 600%;
+                bottom: 0;
+                right: 0;
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                border-left:3rem solid {color:accent};
+                padding-left:0rem;
+            }
+            
+            h1 span{
+                display:inline;
+            }
+            
+            .pinned::before{
+                content: " ";
+            }
+            
         }
 
         
         /* --- STATS PAGE ------------------------- */
-
-        .about{
-            top:1.5rem;
-            background: {color:accent};
-            color: #ffffff !important;
-            padding: .5rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing:0;
-            margin:.5rem 0 .5rem 0;
-        }
 
         h1.name {
           font-size: 4rem;
@@ -483,6 +491,7 @@
         
         table.stats {
           margin-left: -0.6rem;
+            
         }
         
         table.stats td {
@@ -508,49 +517,40 @@
 <body>
 
 
-<!--<div class="top-sidebar"></div>-->
-<div class="top">
-  <!-- <h1 class="title">TRAITORl</h1>
-  <h1 class="fill title">TRAITOR!</h1>
-  <h1 class="stroke title">TRAITOR!</h1>-->
-  <h1 class="title-thin">myself, arch-traitor to myself;</h1>
-  <p class="desc">like patience, passion comes from the same latin root: <em style="color:{color:accent}">pati</em>. it does not <br/>mean to flow with exuberance. it means to suffer. independent bruno<br/>buccellati.</p>
+<div class="sidebar-color"></div>
+<div class="sidebar">
+  <h1 class="title">
+      <span>MYSELF,</span>
+      <span class="stroke">ARCH-TRAITOR</span>
+      <span class="fill">TO MYSELF;</span>
+  </h1>
   
-  <a class="nav" href="/"><span class="navnum">01. </span><span>home</span></a>
-  <a class="nav" href="/ask"> <span class="navnum">02. </span><span>ask</span></a>
-  <a class="nav" href="/guidelines"> <span class="navnum">03. </span><span>guidelines</span></a>
-  <a class="nav" href="/i"> <span class="navnum">04. </span><span>stats</span></a>
-  <a class="nav" href="https://github.com/ectophage"><span class="navnum">05. </span><span>theme</span></a>
+  <p class="desc">{description}</p>
+  
+  <a class="nav" href="/"><span class="navnum">01.&nbsp;</span><span>home</span></a>
+  <a class="nav" href="/ask"> <span class="navnum">02.&nbsp;</span><span>ask</span></a>
+  <a class="nav" href="/guidelines"> <span class="navnum">03.&nbsp;</span><span>guidelines</span></a>
+  <a class="nav" href="/i"> <span class="navnum">04.&nbsp;</span><span>stats</span></a>
+  <a class="nav" href="https://github.com/ectophage/theme-heresiarch"> <span class="navnum">05.&nbsp;</span><span>theme</span></a>
+  
+                  <div class="pagination">
+    {block:Pagination}
+        {block:PreviousPage}<a href="{PreviousPage}"><i class="fas fa-chevron-left"></i></a>{/block:PreviousPage}
+            {block:JumpPagination length="5"}
+                {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+                {block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}
+            {/block:JumpPagination}
+        {block:NextPage}<a href="{NextPage}"><i class="fas fa-chevron-right"></i></a>{/block:NextPage}
+    {/block:Pagination}
+    </div>
+    
 </div>
 
 
 <div id="posts-wrapper">
 
         {block:Posts}
-        <div class="entry" id="{PostID}">
-
-<div class="posts-permalink">
-                <p class="left">
-                <!-- REBLOGGED FROM SECTION --->
-                {block:RebloggedFrom}
-                <!-- REBLOGGED FROM -->
-                <a href="{ReblogParentURL}"><i class="fas fa-retweet"></i> &nbsp;{ReblogParentName}</a>
-                {/block:RebloggedFrom}
-                </p>
-                
-                <p class="right"><!-- TIMESTAMP -->
-                {block:Date}
-                <a href="{Permalink}">{TimeAgo}</a>
-                {/block:Date}
-                 <!-- NOTES -->
-                 {blocK:NoteCount}
-                <a href="{Permalink}">{NoteCountWithLabel}</a>
-                {/block:NoteCount}
-                <!-- SOURCE -->
-                {block:ContentSource}<a href="{SourceURL}">SOURCE</a>{/block:ContentSource}
-                </p>
-                    
-                </div>
+        <div class="entry {TagsAsClasses}" id="{PostID}">
                 
                 <div class="post-content">
 
@@ -650,8 +650,22 @@
     </div> <!-- /POST-CONTENT -->
 
 
-        <!-- FOOTER -->
+<!-- FOOTER -->
+
+        {block:Date}
             <div class="footer">
+            <!-- TIMESTAMP -->
+                <a href="{Permalink}" class="footer-date">{TimeAgo}</a>
+                 <!-- NOTES -->
+                <a href="{Permalink}">{NoteCountWithLabel}</a>
+                <a href="{ReblogURL}" target="_blank">reblog</a>
+                <!-- SOURCE -->
+                {block:ContentSource}<a href="{SourceURL}">{SourceTitle}</a>{/block:ContentSource}
+                <!-- REBLOGGED FROM SECTION --->
+                {block:RebloggedFrom}
+                <!-- REBLOGGED FROM -->
+                <a href="{ReblogParentURL}">via&nbsp;{ReblogParentName}</a>
+                {/block:RebloggedFrom}
                 <p>
                 {block:HasTags}{block:Tags}
             <a href="{TagURL}" class="tags">{Tag}</a> &nbsp;
@@ -659,21 +673,17 @@
                 </p>
             
             </div> <!-- / FOOTER -->
+            {/block:Date}
+            
+            
             </div> <!-- / POST -->
 
 
         {/block:Posts}
         
-                <div class="pagination">
-    {block:Pagination}
-        <!-- {block:PreviousPage}<a href="{PreviousPage}"><i class="fas fa-chevron-left"></i></a>{/block:PreviousPage} -->
-            {block:JumpPagination length="5"}
-                {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-                {block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}
-            {/block:JumpPagination}
-        <!-- {block:NextPage}<a href="{NextPage}"><i class="fas fa-chevron-right"></i></a>{/block:NextPage} -->
-    {/block:Pagination}
-    </div>
+        <!-- POST NOTES -->
+        {block:PostNotes}<div class="post-notes">{PostNotes}</div>{/block:PostNotes}
+        <!-- / POST NOTES -->
         
         </div> <!-- /POSTS -->
     
